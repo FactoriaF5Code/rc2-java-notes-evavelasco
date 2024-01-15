@@ -1,0 +1,55 @@
+Las variables Java son un espacio de memoria en el que guardamos un determinado valor (o dato). Para definir una variable seguiremos la estructura:
+
+`[privacidad] tipo_variable identificador;`
+
+Todas las variables tendrán un tipo de dato (ya sea un tipo de dato primitivo o una clase) y un nombre de identificador.
+
+El tipo de dato se asignará a la hora de definir la variable. Además, en el caso de que las variables sean propiedades de objetos tendrán una privacidad.
+
+Ejemplo
+`int numero = 2;`
+`String cadena = "Hola";`
+`long decimal = 2.4;`
+`boolean flag = true;`
+`
+
+Las variables son utilizadas como propiedades dentro de los objetos.
+
+`class Triangulo {`
+`private long base;`
+`private long altura;`
+`}`
+
+**TIPOS DE VARIABLES**
+
+_Variables de instancia_ (campos no estáticos), son las variables que están definidas dentro de un objeto pero que no tienen un modificador de estáticas (static). Suelen llevar un modificador de visibilidad (public, private, protected) definiéndose.
+
+`class Triangulo {`
+` private long base;`
+` private long altura;}`
+
+_Variables de clase_(campos estáticos), son aquellas variables que están precedidas del modificador static. Esto indica que solo hay una instancia de dicha variable. Es decir, aunque tengamos N objetos de la clase, la variable estática solo se instancia una vez.
+
+`class Triangulo {`
+`static long lados = 3;`
+`}`
+
+Si además queremos que el valor no pueda cambiar nunca la definiremos como final.
+
+`class Matematicas {`
+`final static long PI = 3.14159;`
+``}`
+
+_Variables locales_, son variables temporales cuyo ámbito de visibilidad es el método sobre el que están definidas. No pueden ser accedidas desde otra parte del código. Se las distingue de las variables de instancia ya que estas no llevan modificadores de visibilidad delante.
+
+`int variable = 2;`
+
+_Parámetros_, son las variables recibidas como parámetros de los métodos. Su visibilidad será el código que contenga dicho método.
+
+`public Triangulo(long base, long altura){...}`
+
+**NOMBRES DE LAS VARIABLES**
+
+Los identificadores siempre se escriben en minúsculas. (pe. nombre). Y si son dos o más palabras, el inicio de cada siguiente palabra se escriba en mayúsculas (pe. nombrePersona)
+
+Si el identificador implica que sea una constante. Es decir que hayamos utilizado los modificadores final static, dicho nombre se suele escribir en mayúsculas (pe. LETRA). Y si la constante está compuesta de dos palabras, estas se separan con un subrayado (pe. LETRA_PI).
