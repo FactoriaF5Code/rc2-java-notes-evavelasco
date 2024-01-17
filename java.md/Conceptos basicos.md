@@ -20,15 +20,15 @@ Televisor||||| Encendida ||||||||Encender
 |||||||||||||||Apagada ||||||||||Apagar
 ||||||||||||En el canal 1 |||||Cambiar de canal
 
-CLASE:
+**CLASE:**
 Las clases representan los prototipados de los objetos que tenemos en el mundo real. Es decir, ES UNA GENERALIZACION DE UN CONJUNTO DE OBJETOS. A su vez, LOS OBJETOS SERAN INSTANCIAS DE UNA DETERMINADA CLASE.
 
-/_Ejemplo definición de un triángulo con 2 propiedades base y altura definidas como private,lo cual hace que no puedan ser visibles desde fuera._/
+//Ejemplo definición de un triángulo con 2 propiedades base y altura definidas como private,lo cual hace que no puedan ser visibles desde fuera.//
 `class Triangulo {`
 `private long base;`
 `private long altura;`
 
-/\*método constructor. Es el método que tiene el mismo nombre que la clase: Triangulo () y que nos sirve para inicializar las propiedades desde el exterior.\*/
+\\Método constructor. Es el método que tiene el mismo nombre que la clase: Triangulo () y que nos sirve para inicializar las propiedades desde el exterior.\\
 
     `public Triangulo(long base, long altura) {`
         `this.base = base;`
@@ -51,3 +51,50 @@ Las clases representan los prototipados de los objetos que tenemos en el mundo r
 
 **INTERFACE:**
 Es una forma de establecer un contrato entre dos elementos. Un interface indica qué acciones son las que una determinada clase nos va a ofrecer cuando vayamos a utilizarla.
+Cuando implementamos una interface deberemos implementar todas las acciones(métodos) que este contenga.
+Ej.Aqui definimos un interface Figura y definimos los métodos que seran obligatorios
+`interface Figura {`
+` public long area();`
+`public long perimetro();}`
+
+Y cuando que una clase implemente un determinado interface deberemos utilizar el **operador implements** indicando en nombre de la interface a implementar
+
+\*Si un triángulo queremos que implemente el interface Figura lo definiremos asi:\*
+
+_/ y asi la clase Triángulo implementa los métodos expresados arriba(calcular área y perimetro)/_
+
+`public Triangulo implements Figura {`
+...
+``}`
+
+**PAQUETE**
+Es una forma de organizar elementos de software mediante un espacio de nombres, que nos facilita encontrar o referirnos a un elemento.
+Se definen mediante el modificador **package** seguido del nombre del paquete y lo definiremos en la primera linea de cada una de las clases.
+
+Ej.
+`package net.manualweb.java.ejemplos;`
+
+El lenguaje Java nos proporciona un conjunto de paquetes por defecto(API Java) en los que se pueden encontrar multiples utilidades del lenguaje.
+
+**HERENCIA**
+
+Es una forma de estructurar el lenguaje. Podemos indicar que una clase hereda de la otra, es decir, extiende las capacidades(propiedades y métodos) que tenga y añade nuevas acciones y propiedades.
+
+Ej.
+/\_el triángulo puede heredar de una clase poligono/\*
+
+`public class Triangulo extends Poligono {...}`
+
+La herencia entre clases se indica mediante el operador **extends**
+
+*/Cuando ahora indiquemos que la clase *Triángulo* hereda de la clase *Poligono\*
+
+`public class Triangulo extends Poligono {`
+...
+
+`public Triangulo (long base, long altura, int[] lados) {`
+`` super(lados);`
+        `this.base = base;`
+        `this`.altura = altura; ``
+
+        Una de las cosas que tienes que saber en la herencia es que en el constructor de la clase que hereda (o clase hija) deberas de llamar al constructor de la clase padre con el método especial ***super()***
